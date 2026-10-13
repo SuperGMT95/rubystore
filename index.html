@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUNGEMC — Minecraft Server</title>
+<title>LUNGEMC — Gold Edition Minecraft Network</title>
+<meta name="theme-color" content="#100900">
+<meta name="description" content="Join LUNGEMC Minecraft server, explore game modes, and browse ranks and keys.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -128,12 +130,263 @@ main,section{position:relative;z-index:2}
 #home::before{background:linear-gradient(180deg,rgba(1,5,16,.32),rgba(2,9,22,.66)),radial-gradient(circle at 50% 50%,rgba(0,174,255,.12),transparent 58%)}
 #home .stars,#home .cloud,#home .island,#home .waterfall{opacity:.24}
 
+
+/* LUNGEMC store redesign: black + gold storefront, inspired by modern Minecraft server shops. */
+:root{--bg:#080808;--bg2:#101010;--panel:rgba(20,19,16,.94);--line:rgba(242,185,65,.28);--text:#fffaf0;--muted:#c6bdab;--cyan:#f2bd4b;--blue:#b8791d;--green:#68df9a;--purple:#dca84a;--red:#ff5b60}
+body{background:radial-gradient(ellipse at 50% -15%,#453016 0,#17120b 27%,#080808 66%);color:#fffaf0}
+body::before{opacity:.10;background-image:linear-gradient(rgba(255,220,145,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,220,145,.06) 1px,transparent 1px)}
+.nav{height:76px;background:rgba(8,8,8,.93);border-bottom:1px solid rgba(242,189,75,.25);box-shadow:0 8px 32px #0008}
+.logo{font-size:23px;text-shadow:0 0 22px #e7a72d2b}.logo span{color:#f4c35d;text-shadow:0 0 18px #e6a62f55}
+.nav ul{gap:19px;color:#ddd3c0;font-size:14px}.nav a:hover{color:#ffd36d;text-shadow:0 0 13px #d99c3544}
+.nav-discord{border-color:#a97828;background:linear-gradient(135deg,#f4c65d,#bd801f);color:#16100a!important;box-shadow:0 6px 20px #e3a3331c;font-weight:900}
+.mobile-controls button,.menu-toggle{border-color:#88601e!important;background:#17130d!important;color:#f8ce70!important}
+.hero{min-height:91vh;padding-top:120px;background:radial-gradient(ellipse at 50% 27%,#6c4a1a88,transparent 32%),radial-gradient(circle at 15% 50%,#553d1e55,transparent 28%),linear-gradient(180deg,#090807 0,#171108 56%,#090807 100%)}
+.hero::before{background:linear-gradient(180deg,#08080725,#080807a8),radial-gradient(circle at 50% 54%,#edb84a15,transparent 56%)}
+.hero-pill{border-color:#c08a30;background:linear-gradient(135deg,#3a2910e8,#1d170fe8);color:#ffda82;box-shadow:0 0 25px #e7ac3920}
+.hero h1{background:linear-gradient(180deg,#fffdf7 0%,#ffe9ad 38%,#f4bd4a 72%,#a76c18 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 5px 0 #201507) drop-shadow(0 0 26px #e2a53240)}
+.hero-sub{color:#d5c9b3}.btn{border-radius:10px}.btn-primary{background:linear-gradient(135deg,#ffda78,#d89b2c);color:#1b1307;box-shadow:0 10px 28px #e1a12d24}.btn-secondary{background:#17130d;border-color:#76551e;color:#fbe8bc}
+.hero-ip-card{width:min(560px,94vw);margin:27px auto 0;display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 14px;padding:16px 18px;text-align:left;border:1px solid #b17d2c66;border-radius:15px;background:linear-gradient(135deg,#17130df2,#0c0b09f2);box-shadow:0 18px 48px #0008}
+.hero-ip-label{grid-column:1/-1;color:#d6a84b;font-size:11px;font-weight:900;letter-spacing:2px}.hero-ip-card strong{font-size:clamp(15px,2.8vw,20px);letter-spacing:.5px;color:#fff5d8;overflow-wrap:anywhere}.hero-ip-card button{border:1px solid #dca83c;border-radius:8px;background:#f2bd4b;color:#1c1408;padding:9px 13px;font-weight:900;cursor:pointer}.hero-ip-card small{grid-column:1/-1;color:#b8aa91;font-size:11px;letter-spacing:1px}
+.server-card,.join-card,.feature,.shop-card,.discord-box,.faq,.rule,.staff-mini-card,.stat,.discord-section .discord-box{background:linear-gradient(145deg,rgba(28,24,17,.96),rgba(12,11,9,.98));border-color:#9e742d55;box-shadow:0 15px 38px #0005}
+.section{background:linear-gradient(180deg,#090807,#100e0a)}.section.alt{background:linear-gradient(180deg,#100e0a,#080807)}
+.eyebrow{color:#efbd55}.section-title{color:#fff5dd;text-shadow:0 2px 22px #e5a52b12}.section-sub{color:#c8bda8}
+.join-label,.join-port-label{color:#edbd5b}.join-value{color:#ffdf8b}.join-copy,.key-buy,.btn-buy{background:linear-gradient(135deg,#f7d274,#c88b27)!important;color:#211606!important;border-color:#efbd55!important}.join-step b{background:#e8b54c;color:#201606}
+.feature-icon{background:#2a2111;border-color:#8e6729;color:#ffcf66}.feature h3,.shop-card .rank-name,.staff-mini-card h3,.faq h3{color:#ffe2a0}.price{color:#ffd16a!important}.rank-note{border-color:#b88a36;background:#21180b;color:#ffe7b4}
+#shop .shop-card:hover,#keyshop .shop-card:hover,.feature:hover,.join-card:hover,.staff-mini-card:hover{transform:translateY(-5px);border-color:#e4b64d;box-shadow:0 18px 42px #0008,0 0 24px #d69b2b12}
+.footer{background:#070706;border-top:1px solid #9e742d55;color:#b9ad96}.footer strong{color:#f4c35d}
+.mobile-menu{background:#0d0b08;border-color:#8b6528}.mobile-menu a{border-color:#3e3019;color:#f5e7c7}.mobile-menu a:hover{background:#241a0b}
+#home .stars{opacity:.18}#home .cloud,#home .island,#home .waterfall{opacity:.17;filter:saturate(.55)}
+::selection{background:#f2bd4b;color:#171006}
+@media(max-width:1100px){.nav ul{gap:12px;font-size:13px}.nav-social a:nth-child(2){display:none}}
+@media(max-width:760px){.nav{height:68px}.nav-inner{width:92vw}.logo{font-size:20px}.nav ul{display:none}.nav-social{display:none}.hero{min-height:88vh;padding:105px 4vw 58px}.hero h1{font-size:clamp(43px,13vw,76px)}.hero-ip-card{grid-template-columns:1fr auto;padding:14px}.hero-ip-card strong{font-size:14px}.section{padding:76px 5vw}.feature-grid,.shop-grid{grid-template-columns:1fr}.hero-actions .btn{flex:1 1 42%;padding:12px 13px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* Full-site MCGold-inspired visual pass: unify every section in black, bronze and gold. */
+:root{--bg:#080704;--bg2:#100c06;--panel:rgba(19,15,8,.94);--line:rgba(255,190,48,.42);--text:#fff9e9;--muted:#cfc3a7;--cyan:#ffcf52;--blue:#d99a19;--green:#f2c44f;--purple:#d8a13a}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:#070604;color:#fff8e7}
+body::before{opacity:.18;background-image:linear-gradient(rgba(255,202,92,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,202,92,.045) 1px,transparent 1px);background-size:44px 44px}
+.nav{background:rgba(5,5,4,.96);border-bottom:1px solid #a9761e;box-shadow:0 5px 28px #000b}
+.logo,.logo span{color:#ffcf52!important;text-shadow:0 0 18px #e4a52d44}
+.nav ul a{color:#f0e6cf}.nav ul a:hover,.nav ul a.active{color:#ffda68}
+.nav-discord{background:#151109!important;border:1px solid #9d6c17!important;color:#ffda68!important}
+.hero{background:radial-gradient(ellipse at 72% 35%,#8a5a12a0,transparent 34%),radial-gradient(ellipse at 18% 55%,#4d300f75,transparent 35%),linear-gradient(180deg,#090806,#171006 56%,#070605)!important}
+.hero::before{background:linear-gradient(90deg,rgba(5,4,2,.65),rgba(5,4,2,.05) 72%),linear-gradient(180deg,#05040322,#05040399)!important}
+.hero h1{background:linear-gradient(180deg,#fffdf6 0%,#ffe9a0 34%,#ffc52e 68%,#a96508 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;filter:drop-shadow(0 5px 0 #251605) drop-shadow(0 0 28px #ffb82055)!important}
+.hero-pill,.eyebrow{color:#ffcf52!important;border-color:#b78322}
+.hero-pill{background:linear-gradient(135deg,#35240b,#161006)!important}
+.hero-sub,.section-sub{color:#d6c8aa}
+.btn-primary,.join-copy,.key-buy,.btn-buy{background:linear-gradient(135deg,#ffe17a,#e8a51c 65%,#a96a0b)!important;color:#201403!important;border-color:#ffcf52!important}
+.btn-secondary{background:#171108!important;border-color:#8e641a!important;color:#ffe9b3!important}
+.hero-ip-card,.server-card,.join-card,.feature,.shop-card,.discord-box,.faq,.rule,.staff-mini-card,.stat,.owner-card{background:linear-gradient(145deg,rgba(35,25,10,.97),rgba(8,7,5,.98))!important;border-color:#a9771d!important;box-shadow:0 14px 42px #0009,0 0 20px #d8971b12}
+.section,.section.alt{background:linear-gradient(180deg,#090806,#100c06)!important}
+.section-title,.feature h3,.shop-card .rank-name,.staff-mini-card h3,.faq h3{color:#fff0c4!important}
+.feature-icon,.join-step b{background:#30220b!important;color:#ffd45c!important;border-color:#a97b22!important}
+.join-value,.owner-card h3,.owner-badge,.owner-tags span{color:#ffdc70!important}
+.join-label,.join-port-label,.price,.rank-note{color:#ffda73!important}
+.owner-section{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#704a1270,transparent 48%),linear-gradient(180deg,#080705,#100b05)!important}
+.owner-section::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(120deg,transparent 35%,#ffca3510 50%,transparent 65%);background-size:260% 100%;animation:goldSweep 12s linear infinite}
+.owner-section .section-wrap{position:relative;z-index:1}
+.owner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:1100px;margin:32px auto 0}
+.owner-card{position:relative;min-width:0;padding:28px;border:1px solid #d49a22!important;border-radius:20px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.owner-card::before{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid #ffe18b33;border-radius:19px;background:linear-gradient(135deg,#ffc83b12,transparent 40%,#ffc83b08)}
+.owner-card:hover{transform:translateY(-6px);box-shadow:0 18px 48px #000a,0 0 28px #ffbb2c30!important;border-color:#ffdc61!important}
+.owner-avatar{border:2px solid #dba127!important;box-shadow:0 0 25px #e9aa2c45}
+.owner-badge{display:inline-flex;padding:5px 12px;border-radius:999px;border:1px solid #bd871e;background:#2b1e08;font-weight:900;letter-spacing:1px}
+.owner-card h3{font-size:clamp(25px,3vw,34px);letter-spacing:1px;margin:12px 0 5px}
+.owner-card p{color:#d5c8ae}
+.owner-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.owner-tags span{display:inline-block;padding:5px 10px;border:1px solid #8e641b;border-radius:999px;background:#211707;font-size:12px;font-weight:700}
+.footer{background:#050504!important;border-top:1px solid #9b6b19!important;color:#c9b994!important}
+.footer a:hover{color:#ffdb68!important}
+.mobile-menu{background:#0c0905!important;border-color:#a6751e!important}
+.mobile-menu a{color:#ffebbd!important;border-color:#49320e!important}
+button,a,.feature,.shop-card,.owner-card{ -webkit-tap-highlight-color:transparent }
+@keyframes goldSweep{0%{background-position:100% 0}100%{background-position:-100% 0}}
+@media(max-width:760px){.owner-grid{grid-template-columns:1fr;gap:16px}.owner-card{padding:22px}.owner-card h3{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.owner-section::before{animation:none}}
+
+
+/* Readability fix: make small/missing-looking labels clear on every section */
+body{font-size:16px;color:#fffaf0!important}
+.nav ul{font-size:16px!important;gap:clamp(10px,1.7vw,25px)!important}
+.nav ul a,.nav-social a,.nav-social button{color:#fff3d1!important;text-shadow:0 1px 2px #000}
+.section-title{font-size:clamp(27px,3.3vw,40px)!important;line-height:1.2!important;text-shadow:0 2px 8px #000}
+.section-sub,.hero p,.owner-card p,.feature p,.shop-card p,.staff-mini-card p,.faq p,.rule p{color:#fff0d0!important;font-size:clamp(15px,1.25vw,17px)!important;line-height:1.65!important}
+.owner-card h3{color:#fff8df!important;font-size:clamp(27px,3vw,36px)!important;font-weight:900!important;overflow-wrap:anywhere}
+.owner-badge{color:#ffe16a!important;background:#211602!important;border:2px solid #ffca3d!important;font-size:14px!important;font-weight:900!important;white-space:nowrap}
+.owner-tags span{color:#ffe7a0!important;font-size:13px!important;font-weight:800!important}
+.feature h3,.shop-card h3,.shop-card .rank-name,.staff-mini-card h3,.faq h3,.rule h3{color:#ffe6a0!important;font-size:clamp(17px,1.6vw,21px)!important;line-height:1.35!important}
+.feature,.shop-card,.key-card,.event-card,.faq-item,.staff-mini-card,.rule,.stat,.server-card{color:#fff8e7!important}
+.nav a,.footer a{font-weight:800!important}
+.footer{font-size:15px!important;line-height:1.7!important}
+/* Keep both leaders explicitly marked as OWNERS, never owner */
+.owner-grid .owner-card:nth-child(1) .owner-badge,
+.owner-grid .owner-card:nth-child(2) .owner-badge{font-size:14px!important;letter-spacing:.6px!important}
+@media(max-width:760px){
+ .nav{height:auto;min-height:68px;padding:10px 0}
+ .nav-inner{width:94vw;gap:10px;flex-wrap:wrap}
+ .nav ul{flex-wrap:wrap;justify-content:center;gap:8px 14px!important;font-size:15px!important}
+ .logo{font-size:20px!important}
+ .section{padding-left:5vw!important;padding-right:5vw!important}
+ .owner-card{padding:18px!important}
+ .owner-card h3{font-size:27px!important}
+ .owner-tags span{font-size:13px!important}
+}
+
+
+/* FULL MCGOLD-INSPIRED VISUAL PASS: stronger black/gold contrast and complete readable labels */
+:root{--bg:#080602;--bg2:#130d03;--panel:rgba(13,9,3,.92);--line:rgba(255,190,26,.65);--text:#fffaf0;--muted:#f2dfb2;--cyan:#ffc72c;--blue:#ffab00;--green:#f5cf51;--purple:#f7b91a}
+html,body{background:#080602!important;color:#fffaf0!important}
+body{background-image:radial-gradient(ellipse at 50% 8%,rgba(255,174,0,.18),transparent 48%),linear-gradient(180deg,#050403 0%,#100a02 52%,#050403 100%)!important}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.3;background-image:linear-gradient(135deg,transparent 48%,rgba(255,183,0,.13) 49%,transparent 51%),linear-gradient(45deg,transparent 48%,rgba(255,183,0,.07) 49%,transparent 51%);background-size:54px 54px}
+.nav,.navbar,.site-header{background:rgba(5,4,2,.97)!important;border-bottom:1px solid #9f710c!important;box-shadow:0 5px 24px #000b,0 1px 12px #ffb00020!important}
+.logo,.brand,.nav-brand{color:#ffd34c!important;text-shadow:0 0 14px #ffb00055}
+.nav a,.nav button,.nav-social a,.nav-social button{border-color:#805a0b!important}
+.nav a:hover,.nav button:hover,.btn:hover,.button:hover{background:linear-gradient(135deg,#ffe36a,#ffad00)!important;color:#180f00!important;box-shadow:0 0 20px #ffb00055!important}
+.hero{background-color:#080602!important}
+.hero::before,.hero::after{opacity:.75!important}
+.hero-pill,.eyebrow,.owner-badge{background:linear-gradient(135deg,#2b1b00,#100b02)!important;border-color:#ffd047!important;color:#ffe47b!important;box-shadow:0 0 16px #ffb00025!important}
+.hero h1,.hero h1 span,.section-title,.section-title span{color:#ffd34c!important;text-shadow:0 3px 0 #6b3e00,0 0 22px #ffb00040!important}
+.section,.section.alt{background:transparent!important}
+.section-wrap{position:relative}
+.section-title{font-weight:900!important;letter-spacing:.035em!important}
+.section-sub,.hero p,.owner-card p,.feature p,.shop-card p,.staff-mini-card p,.faq p,.rule p{color:#fff4d9!important;text-shadow:0 1px 2px #000!important}
+.owner-grid{gap:22px!important}
+.owner-card,.feature,.shop-card,.key-card,.event-card,.faq,.faq-item,.staff-mini-card,.rule,.stat,.server-card{background:linear-gradient(145deg,rgba(33,22,3,.96),rgba(7,6,3,.96))!important;border:1px solid #d69b12!important;box-shadow:inset 0 0 24px #ffb0000d,0 0 14px #ffb00016!important;border-radius:15px!important}
+.owner-card{outline:1px solid #ffc52a45!important;outline-offset:3px}
+.owner-card h3,.feature h3,.shop-card h3,.shop-card .rank-name,.staff-mini-card h3,.faq h3,.rule h3{color:#ffe28a!important;text-shadow:0 0 12px #ffb00025!important}
+.owner-badge{display:inline-flex!important;align-items:center;gap:6px;padding:7px 13px!important;border-radius:999px!important}
+.owner-tags span{background:#211600!important;border:1px solid #bb850b!important;border-radius:999px!important;color:#ffe28a!important;padding:5px 11px!important}
+.feature-icon,.rank-art,.rank-badge{filter:drop-shadow(0 0 8px #ffb0004a)}
+.btn,.button,.btn-buy,button.copy-btn{background:linear-gradient(135deg,#ffe46a,#ffb000)!important;color:#211400!important;border:1px solid #fff0a6!important;font-weight:900!important;box-shadow:0 0 12px #ffb00022!important}
+a{transition:color .18s,background .18s,transform .18s,box-shadow .18s}
+.feature:hover,.shop-card:hover,.owner-card:hover,.staff-mini-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px #ffb00022!important;border-color:#ffe06b!important}
+.footer{background:#050403!important;border-top:1px solid #9f710c!important;color:#fff0c2!important}
+.footer strong,.footer .server-ip{color:#ffd34c!important}
+/* Ensure long labels never disappear or clip on narrow screens */
+*{min-width:0}
+h1,h2,h3,p,a,button,span,strong,.eyebrow,.owner-badge,.owner-tags{overflow-wrap:anywhere}
+.nav a,.nav button{white-space:normal!important}
+@media(max-width:760px){.nav-inner{height:auto!important}.nav ul{row-gap:9px!important}.hero-content{padding-top:28px!important}.owner-grid{grid-template-columns:1fr!important}.owner-card{padding:18px!important}.feature-grid,.shop-grid{grid-template-columns:repeat(1,minmax(0,1fr))!important}.section-title{font-size:clamp(26px,7vw,36px)!important}.footer{padding:22px 5vw!important}}
+
+</style>
+<style>
+
+/* === LUNGEMC readability fix: visible headings, labels and buttons on mobile === */
+html{scroll-behavior:smooth}
+body{color:#fff4d6!important;background:#080602!important}
+body,body *{text-shadow:none}
+p,li,small,label,.section-sub,.feature p,.mode-card p,.rank-tag,.stat span,
+.owner-card p,.staff-mini-card p,.event-card p,.faq-item p,.rank-note p,
+.footer,.footer a,.nav-links a,.navbar a,.site-nav a{
+  color:#f4ead2!important;
+  opacity:1!important;
+}
+h1,h2,h3,h4,h5,h6,.section-title,.hero-title,.rank-name,.owner-card h3,
+.feature h3,.mode-card h3,.event-card h3,.staff-mini-card h3{
+  color:#ffe7a0!important;
+  opacity:1!important;
+  -webkit-text-fill-color:#ffe7a0!important;
+  text-shadow:0 0 10px rgba(255,190,40,.18)!important;
+}
+.eyebrow,.owner-badge,.badge,.rank-tag,.price,.nav-links a,.navbar a{
+  color:#ffd34d!important;
+  opacity:1!important;
+}
+a,button,.btn,.btn-primary,.btn-secondary,.btn-buy,.sound-toggle,.menu-toggle{
+  opacity:1!important;
+}
+.btn-primary,.btn-buy{
+  color:#201400!important;
+  background:linear-gradient(135deg,#ffe778,#ffb900)!important;
+  border:1px solid #ffe27a!important;
+  -webkit-text-fill-color:#201400!important;
+}
+.btn-secondary,.sound-toggle,.menu-toggle,.nav-links a,.navbar a{
+  background-color:rgba(30,20,5,.96)!important;
+  border-color:rgba(255,198,55,.72)!important;
+}
+.feature,.mode-card,.shop-card,.key-card,.event-card,.faq-item,.staff-mini-card,
+.owner-card,.rank-note,.stat,.discord-box{
+  color:#fff4d6!important;
+}
+.feature-icon,.mode-icon{color:#ffda58!important;opacity:1!important}
+img{max-width:100%}
+@media(max-width:760px){
+  .section-title,h2{font-size:clamp(21px,5vw,30px)!important;line-height:1.25!important}
+  h1{font-size:clamp(30px,8vw,48px)!important;line-height:1.12!important}
+  h3{font-size:clamp(16px,4.2vw,22px)!important;line-height:1.3!important}
+  p,.section-sub,.feature p,.mode-card p,.owner-card p,.rank-note p{font-size:14px!important;line-height:1.55!important}
+  .owner-grid{grid-template-columns:1fr!important}
+  .nav-links a,.navbar a,.site-nav a{font-size:12px!important}
+}
+
+</style>
+<style>
+
+/* === FORCE VISIBLE TEXT COLORS — high contrast mobile patch === */
+:root{color-scheme:dark}
+body{background:#080808!important;color:#ffffff!important}
+body *{
+  text-shadow:none!important;
+  opacity:1!important;
+  -webkit-text-fill-color:currentColor;
+}
+body p,body span,body li,body label,body small,body strong,body em,
+body div,body a,body button,body summary,body td,body th{
+  color:#fff4d8;
+}
+body h1,body h2,body h3,body h4,body h5,body h6,
+body .title,body .section-title,body .hero-title,body .logo,
+body .brand,body .price,body .rank-name,body .owner-name{
+  color:#ffd34f!important;
+  -webkit-text-fill-color:#ffd34f!important;
+}
+body .muted,body .description,body .subtitle,body .section-sub,
+body .feature p,body .mode-card p,body .owner-card p,body .rank-card p,
+body .event-card p,body .card p,body .faq-item p{
+  color:#f3ead5!important;
+  -webkit-text-fill-color:#f3ead5!important;
+}
+body input,body textarea,body select{
+  color:#fff!important;background:#17130b!important;
+  border:1px solid #dcae38!important;
+}
+body input::placeholder,body textarea::placeholder{color:#d5c8a8!important;opacity:1!important}
+body button,body .btn,body .btn-primary,body .btn-secondary,body a.btn{
+  color:#ffe9a4!important;-webkit-text-fill-color:#ffe9a4!important;
+  background-color:#241a07!important;border-color:#e5b83f!important;
+}
+body .btn-primary,body .btn-buy,body .copy-ip{
+  background:linear-gradient(135deg,#ffe36b,#ffb900)!important;
+  color:#171000!important;-webkit-text-fill-color:#171000!important;
+}
+body nav a,body header a,body .navbar a,body .nav-links a,body .site-nav a{
+  color:#fff0bf!important;-webkit-text-fill-color:#fff0bf!important;
+}
+body .owner-badge,body .badge,body .tag,body .rank-tag{
+  color:#ffe36b!important;-webkit-text-fill-color:#ffe36b!important;
+  background:#241b08!important;border:1px solid #d8a82e!important;
+}
+body .owner-card,body .rank-card,body .shop-card,body .key-card,
+body .feature,body .mode-card,body .event-card,body .faq-item,body .stat{
+  background-color:rgba(24,19,10,.98)!important;
+  border-color:#bd8d2b!important;
+}
+@media(max-width:760px){
+  body p,body li,body small,body .description,body .subtitle{font-size:14px!important;line-height:1.55!important}
+  body h1{font-size:clamp(30px,8vw,48px)!important}
+  body h2,body .section-title{font-size:clamp(22px,5.8vw,32px)!important}
+}
+
 </style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
   <a class="logo" href="#home">LUNGE <span>MC</span></a>
-  <ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#modes">Game Modes</a></li><li><a href="#join">How to Join</a></li><li><a href="#shop">Ranks</a></li><li><a href="#keyshop">Keyshop</a></li><li><a href="#events">Events</a></li><li><a href="#rules">Rules</a></li><li><a href="#faq">FAQ</a></li></ul>
+  <ul><li><a href="#home">Home</a></li><li><a href="#modes">Game Modes</a></li><li><a href="#shop">Ranks</a></li><li><a href="#keyshop">Key Shop</a></li><li><a href="#join">Server</a></li><li><a href="#owners">Owners</a></li><li><a href="#staff">Team</a></li><li><a href="#rules">Rules</a></li></ul>
   <div class="mobile-controls">
     <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Turn sound on" aria-pressed="false" title="Sound off">🔊</button>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
@@ -141,9 +394,8 @@ main,section{position:relative;z-index:2}
   <div class="nav-social"><a class="nav-discord" href="https://discord.gg/6Utp7wnxdD" target="_blank" rel="noopener">💬 Discord</a><a class="nav-discord" href="https://www.instagram.com/lungemc_mc_555?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">📸 Instagram</a></div>
 </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#home">🏠 Home</a><a href="#about">🌌 About</a><a href="#staff">🛡️ Staff</a><a href="#modes">🎮 Game Modes</a>
-    <a href="#join">🚀 How to Join</a><a href="#shop">👑 Ranks</a><a href="#keyshop">🔑 Keyshop</a>
-    <a href="#events">🎉 Events</a><a href="#rules">📜 Rules</a><a href="#faq">❓ FAQ</a>
+    <a href="#home">🏠 Home</a><a href="#modes">🎮 Game Modes</a><a href="#shop">👑 Ranks</a><a href="#keyshop">🔑 Key Shop</a>
+    <a href="#join">🌐 Server Info</a><a href="#owners">👑 Owners</a><a href="#staff">🛡️ Team</a><a href="#events">🎉 Events</a><a href="#rules">📜 Rules</a><a href="#faq">❓ FAQ</a><a href="#discord">💬 Discord</a>
   </div>
 </nav>
 <main>
@@ -151,10 +403,11 @@ main,section{position:relative;z-index:2}
   <div class="stars"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
   <div class="island i1"></div><div class="island i2"></div><div class="island i3"></div><div class="island i4"></div><div class="waterfall w1"></div><div class="waterfall w2"></div>
   <div class="hero-content">
-    <div class="hero-pill">⚡ WELCOME TO LUNGEMC • MINECRAFT SURVIVAL</div>
+    <div class="hero-pill">✦ LUNGEMC STORE · JAVA + BEDROCK COMMUNITY</div>
     <h1>LUNGE <span>MC</span></h1>
-    <p class="hero-sub">BUILD • SURVIVE • FIGHT • DOMINATE<br>Join LUNGEMC — where legends are built.</p>
-    <div class="hero-actions"><a class="btn btn-primary" href="https://discord.gg/6Utp7wnxdD" target="_blank" rel="noopener">💬 Join Discord</a><a class="btn btn-secondary" href="#about">Explore Server →</a></div>
+    <p class="hero-sub">PLAY • GRIND • DOMINATE<br>Welcome to LUNGEMC! Build your base, battle rivals, earn rewards, and play with your community.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="#shop">👑 View Ranks</a><a class="btn btn-secondary" href="#keyshop">🔑 View Keys</a><a class="btn btn-secondary" href="#join">🌐 How to Join</a></div>
+    <div class="hero-ip-card"><span class="hero-ip-label">JAVA SERVER IP</span><strong>play.lungemc.fun:20005</strong><button type="button" onclick="copyServerAddress('java-server-address',this)">Copy IP</button><small>BEDROCK PORT: 20005</small></div>
     <div class="server-card player-only"><div class="server-cell player-count-cell"><div class="player-count-line">👥 <span id="player-count">—</span> Players Online</div></div></div>
   </div>
 </section>
@@ -210,6 +463,17 @@ main,section{position:relative;z-index:2}
 </div></section>
 
 <section class="section alt" id="events"><div class="section-wrap"><div class="eyebrow">STAY TUNED</div><h2 class="section-title">Events & Giveaways</h2><p class="section-sub">Community events, rewards and special announcements are shared through Discord. Join in and don't miss the next one.</p><div class="discord-box"><h2>Something big could be next 👀</h2><p>Watch Discord for announcements, giveaways and special server events.</p><a class="btn btn-secondary" href="https://discord.gg/6Utp7wnxdD" target="_blank" rel="noopener">Open Discord</a></div></div></section>
+
+
+<section class="section owner-section" id="owners"><div class="section-wrap">
+  <div class="eyebrow">👑 FOUNDERS • LUNGEMC</div>
+  <h2 class="section-title">SERVER <span class="gold-text">LEADERSHIP</span></h2>
+  <p class="section-sub">Meet the two owners leading the LungeMC network.</p>
+  <div class="owner-grid">
+    <article class="owner-card"><div class="owner-avatar owner-avatar-one">👑</div><div class="owner-badge">♛ OWNER</div><h3>LUNEX_V2</h3><p>Owner of LungeMC Network. Leads server management and development.</p><div class="owner-tags"><span>Server Management</span><span>Network Development</span></div></article>
+    <article class="owner-card"><div class="owner-avatar owner-avatar-two">👑</div><div class="owner-badge">♛ OWNER</div><h3>NO_RUBY</h3><p>Owner of LungeMC Network. Leads operations and community support.</p><div class="owner-tags"><span>Community</span><span>Operations</span></div></article>
+  </div>
+</div></section>
 
 <section class="section alt" id="staff"><div class="section-wrap">
   <div class="eyebrow">🛡️ LUNGEMC TEAM</div><h2 class="section-title">OFFICIAL <span style="color:#1fd2ff">STAFF TEAM</span></h2><p class="section-sub">The dedicated team keeping Lunge MC safe, fair, and fun for all players.</p>
@@ -293,46 +557,32 @@ if (menuToggle && mobileMenu) {
 }
 
 
-// Reliable mobile-friendly UI sound effects. About styling/background intentionally left untouched.
+// Polished, soft UI sound: gentle two-note synth click; starts OFF until user enables it.
 (function(){
  const soundBtn=document.getElementById('sound-toggle');
  if(!soundBtn) return;
- let enabled=false, ctx=null, master=null;
- function initAudio(){
-   const AC=window.AudioContext||window.webkitAudioContext;
-   if(!AC) return false;
-   if(!ctx){
-     ctx=new AC();
-     master=ctx.createGain();
-     master.gain.value=0.7;
-     master.connect(ctx.destination);
-   }
-   if(ctx.state==='suspended') ctx.resume().catch(()=>{});
-   return true;
- }
- function tone(freq, start, duration, volume, type){
-   const osc=ctx.createOscillator();
-   const gain=ctx.createGain();
-   osc.type=type||'sine';
-   osc.frequency.setValueAtTime(freq,start);
-   gain.gain.setValueAtTime(0.0001,start);
-   gain.gain.exponentialRampToValueAtTime(Math.max(0.0002,volume),start+0.012);
-   gain.gain.exponentialRampToValueAtTime(0.0001,start+duration);
-   osc.connect(gain); gain.connect(master);
-   osc.start(start); osc.stop(start+duration+0.015);
- }
- function playClick(kind){
-   if(!enabled || !initAudio()) return;
-   const go=()=>{
-     if(!enabled || !ctx) return;
-     const t=ctx.currentTime+0.015;
-     // Soft, bright game-UI chime; different gentle notes for toggles and navigation.
-     const seq=kind==='toggle' ? [[659.25,0],[830.61,.075],[987.77,.15]] :
-               kind==='menu' ? [[587.33,0],[783.99,.065]] :
-               kind==='off' ? [[587.33,0],[440,.09]] : [[783.99,0],[987.77,.055]];
-     seq.forEach(([f,dt])=>tone(f,t+dt,.115,.035,'sine'));
-   };
-   if(ctx.state==='running') go(); else ctx.resume().then(go).catch(()=>{});
+ let enabled=false,ctx=null;
+ function playClick(kind='click'){
+   if(!enabled) return;
+   try{
+     const AudioCtx=window.AudioContext||window.webkitAudioContext;
+     if(!AudioCtx) return;
+     ctx=ctx||new AudioCtx();
+     if(ctx.state==='suspended') ctx.resume();
+     const now=ctx.currentTime;
+     const notes=kind==='toggle'?[740,1046.5]:kind==='menu'?[587.3,880]:[660,784];
+     notes.forEach((freq,i)=>{
+       const osc=ctx.createOscillator();
+       const gain=ctx.createGain();
+       osc.type='sine';
+       osc.frequency.setValueAtTime(freq,now+i*0.045);
+       gain.gain.setValueAtTime(0.0001,now+i*0.045);
+       gain.gain.exponentialRampToValueAtTime(0.022,now+i*0.045+0.008);
+       gain.gain.exponentialRampToValueAtTime(0.0001,now+i*0.045+0.075);
+       osc.connect(gain); gain.connect(ctx.destination);
+       osc.start(now+i*0.045); osc.stop(now+i*0.045+0.08);
+     });
+   }catch(e){}
  }
  soundBtn.addEventListener('click',()=>{
    enabled=!enabled;
@@ -340,19 +590,47 @@ if (menuToggle && mobileMenu) {
    soundBtn.setAttribute('aria-pressed',String(enabled));
    soundBtn.setAttribute('aria-label',enabled?'Turn sound off':'Turn sound on');
    soundBtn.title=enabled?'Sound on':'Sound off';
-   if(enabled){
-     // Creating/resuming audio directly from the tap satisfies mobile browser audio policies.
-     initAudio();
-     playClick('toggle');
-   }
+   if(enabled) playClick('toggle');
  });
  const menuBtn=document.getElementById('menu-toggle');
  if(menuBtn) menuBtn.addEventListener('click',()=>playClick('menu'));
+ // Sound for interactive controls across the site, while avoiding double-playing on the sound switch.
  document.addEventListener('click',e=>{
-   if(e.target.closest('#sound-toggle')) return;
+   if(e.target.closest('#sound-toggle,#menu-toggle')) return;
    if(e.target.closest('a,button,[role="button"],input[type="button"],input[type="submit"],select,summary,.shop-card,.key-buy,.feature,.staff-mini-card,.faq-item,.copy-btn,.join-copy,.server-cell')) playClick('click');
  },true);
 })();
+
 </script>
+
+<style id="lungemc-gold-theme">
+:root{--bg:#080603;--bg2:#171006;--panel:rgba(23,15,5,.82);--line:rgba(255,190,35,.42);--text:#fff8e8;--muted:#d5c6a4;--cyan:#ffd34d;--blue:#ff9f0a;--green:#f7c948;--purple:#e8a51c;--red:#ff6848}
+body{background:radial-gradient(circle at 50% -10%,#573509 0,#1a1005 38%,#050403 84%);color:var(--text)}
+body::before{opacity:.13;background-image:linear-gradient(rgba(255,195,50,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,195,50,.055) 1px,transparent 1px)}
+.nav{background:rgba(8,6,3,.9);border-bottom:1px solid rgba(255,193,40,.38);box-shadow:0 8px 35px rgba(0,0,0,.38)}
+.logo span,.section-title span,.gold-text{color:#ffd34d!important;text-shadow:0 0 18px rgba(255,174,0,.45)}
+.nav a:hover{color:#ffdc68;text-shadow:0 0 14px rgba(255,190,35,.5)}
+.nav-discord{border-color:rgba(255,190,35,.5);background:rgba(44,27,4,.72);box-shadow:0 0 22px rgba(255,174,0,.08)}
+.hero{background:radial-gradient(circle at 50% 24%,rgba(255,169,20,.26),transparent 29%),radial-gradient(circle at 15% 45%,rgba(255,196,46,.15),transparent 26%),radial-gradient(circle at 85% 44%,rgba(205,111,8,.16),transparent 24%),linear-gradient(180deg,#050403 0,#211303 54%,#080603 100%)}
+.hero::before{filter:sepia(1) saturate(1.7) hue-rotate(350deg)}
+.btn,.btn-primary{background:linear-gradient(135deg,#ffdf65,#ffae00)!important;color:#211300!important;border:1px solid #ffe28a!important;box-shadow:0 8px 24px rgba(255,166,0,.23)}
+.btn-secondary,.sound-toggle,.menu-toggle{border-color:rgba(255,195,45,.55)!important;background:rgba(35,22,5,.85)!important}
+.section-title{color:#fff7e5}.eyebrow{color:#ffd34d!important}
+.section.alt{background:linear-gradient(180deg,rgba(16,10,3,.95),rgba(5,4,2,.96))}
+.card,.mode-card,.shop-card,.key-card,.event-card,.faq-item,.staff-mini-card{border-color:rgba(255,185,30,.34)!important;background:linear-gradient(145deg,rgba(43,28,7,.82),rgba(10,8,4,.92))!important;box-shadow:0 10px 32px rgba(0,0,0,.28),inset 0 1px rgba(255,224,135,.06)}
+.card:hover,.mode-card:hover,.shop-card:hover,.key-card:hover,.staff-mini-card:hover{border-color:#ffd34d!important;box-shadow:0 0 26px rgba(255,177,0,.16);transform:translateY(-3px)}
+.owner-section{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0,rgba(190,112,5,.18),transparent 60%),#090704}
+.owner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:28px}
+.owner-card{position:relative;text-align:center;padding:30px 24px;border:1px solid #bd8115;border-radius:18px;background:linear-gradient(145deg,rgba(58,37,7,.75),rgba(10,8,4,.96));box-shadow:0 0 28px rgba(255,170,0,.1),inset 0 0 30px rgba(255,196,46,.035);overflow:hidden}
+.owner-card:before{content:"";position:absolute;inset:7px;border:1px solid rgba(255,208,77,.16);border-radius:12px;pointer-events:none}
+.owner-avatar{width:86px;height:86px;border-radius:22px;margin:0 auto 12px;display:grid;place-items:center;font-size:42px;background:radial-gradient(circle,#69470b,#160e03);border:2px solid #ffd34d;box-shadow:0 0 24px rgba(255,180,0,.25)}
+.owner-avatar-two{background:radial-gradient(circle,#5b3714,#160e03)}
+.owner-badge{display:inline-block;padding:4px 14px;border:1px solid #ffd34d;border-radius:999px;color:#ffda54;background:rgba(255,180,0,.1);font-weight:800;font-size:12px;letter-spacing:1px}
+.owner-card h3{margin:10px 0 2px;font-family:'Bungee','Chakra Petch',sans-serif;font-size:clamp(20px,3vw,29px);color:#fff4d3;letter-spacing:1px}
+.owner-card p{color:#d8c9a8}.owner-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px}.owner-tags span{font-size:12px;color:#ffda54;border:1px solid rgba(255,190,35,.42);background:rgba(255,180,0,.08);border-radius:999px;padding:5px 10px}
+footer,.footer{border-top-color:rgba(255,190,35,.35)!important}
+@media(max-width:650px){.owner-grid{grid-template-columns:1fr}.owner-card{padding:25px 18px}}
+</style>
+
 </body>
 </html>
